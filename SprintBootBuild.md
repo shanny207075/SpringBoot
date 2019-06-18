@@ -4,9 +4,9 @@
 
 ### 1.在eclipse建立一個gradle專案
 
-![](../images/1-8f309bef-5655-45fa-a16a-9444aeae78cf.png)
+![](./images/1-8f309bef-5655-45fa-a16a-9444aeae78cf.png)
 
-![](../images/1-15bab749-8295-45e9-95dd-d2dfb8218758.png)
+![](./images/1-15bab749-8295-45e9-95dd-d2dfb8218758.png)
 
 ### 2.把src/main/java裡面的class package都砍掉
 
@@ -91,28 +91,28 @@ new->other->general->File
 
 ### 6.建立一個main的主程式，這是啟動spring boot的關鍵
 
-![](../images/1-1bd4df91-9233-4a03-bbe2-2174cfadef96.png)
+![](./images/1-1bd4df91-9233-4a03-bbe2-2174cfadef96.png)
 
 這個Application類便是Spring Boot程序的入口。
 
-![](../images/1-9ebfbebd-0159-4b52-bd66-b5eba0562be3.png)
+![](./images/1-9ebfbebd-0159-4b52-bd66-b5eba0562be3.png)
 
 啟動server
 
-![](../images/Untitled-474f7ffa-3b6a-42fd-b979-826b11f177a0.png)
+![](./images/Untitled-474f7ffa-3b6a-42fd-b979-826b11f177a0.png)
 
 ## 開發
 
 ThisIsBean並沒有綁任何Spring 的Annotation 所以Spring 不知道他是什麼東西，所以要在某個地方建立一個Spring Bean給他。spring 容器裡面就有一個bean 叫做thisIsBean物件
 
-![](../images/Untitled-b062d482-e8a9-4059-851e-b7e10ddfe69f.png)
+![](./images/Untitled-b062d482-e8a9-4059-851e-b7e10ddfe69f.png)
 
 這樣就可以注入了。
 
 因為ThisIsMain有綁Service Annotation 所以在自動掃描的時候，他已經是一個spring bean。
 
-![](../images/Untitled-4cf4d019-d5a2-4710-87a2-b0ec914efeed.png)
+![](./images/Untitled-4cf4d019-d5a2-4710-87a2-b0ec914efeed.png)
 
 進入程式
 
-![](../images/Untitled-788d9cdc-7219-4a6f-adbe-a97d7a1812b7.png)
+![](./images/Untitled-788d9cdc-7219-4a6f-adbe-a97d7a1812b7.png)
