@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body ng-app="MyModule">
+	<!-- 	<p>{{cname}}! 你好</p> -->
+	<!-- 	<input type="text" ng-model="cname" > -->
+	<!-- 		<shanny></shanny> -->
+	<!-- 		<div ng-controller="HelloShanny"> -->
+	<!-- 		<p>{{greeting.text}}!!Shanny</p> -->
+	<!-- 		</div> -->
+	<!-- 	<div ng-controller="productList"> -->
+	<!-- 		<ul ng-repeat="pro in product"> -->
+	<!-- 			<li>{{pro.name}}</li> -->
+	<!-- 		</ul> -->
+	<!-- 	</div> -->
+	<!-- 	<div ng-controller="MyController"> -->
+	<!-- 		Your name: <input type="text" ng-model="username"> -->
+	<!-- 		<button ng-click='sayHello()'>greet</button> -->
+	<!-- 		<hr> -->
+	<!-- 		{{greeting}} -->
+	<!-- 	</div> -->
+	<div class="show-scope-demo">
+		<div ng-controller="GreetController">Hello {{name}}!</div>
+		<!--<div ng-controller="ListController">
+			<ol>
+				<li ng-repeat="name in names">{{name}} from
+					{{'XXXXX'+department | uppercase }}</li>
+			</ol>
+		</div>-->
+		<ng-container *ngFor="let info of ListController" >
+		   <div  >{{name}} from {{'XXXXX'+department | uppercase }}</div>   
+		</ng-container>
+	</div>
+</body>
+</html>

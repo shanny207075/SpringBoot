@@ -1,0 +1,12 @@
+package com.example;
+
+public class ThisIsMain {	
+
+	public void getThisIsBean(String code,String name) {
+		if(){
+			
+		}
+	}
+
+}
+

@@ -1,0 +1,27 @@
+package com.example;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("thisIsBean")
+public class ThisIsMain {
+
+	@Autowired
+	ThisIsBean thisIsBean;
+
+	public ThisIsBean getThisIsBean(String code, String name) {
+		if (thisIsBean == null) {
+			System.out.println("@@@ is not null @@@");
+			thisIsBean.setCode("AAA");
+			thisIsBean.setName("BBB");	
+		}
+		else {
+			System.out.println("@@@ is null @@@");
+			thisIsBean = new ThisIsBean();
+			thisIsBean.setCode("AAA");
+			thisIsBean.setName("BBB");
+		}
+		return thisIsBean;
+	}
+
+}

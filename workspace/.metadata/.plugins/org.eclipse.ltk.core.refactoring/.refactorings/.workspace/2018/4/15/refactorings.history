@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;AngularJs_20180407&apos;" deleteContents="true" description="Delete resource &apos;AngularJs_20180407&apos;" element1="/AngularJs_20180407" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1523171086593"/>
+</session>

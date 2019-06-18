@@ -1,0 +1,18 @@
+package com.example;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class ThisIsMain {	
+	
+	@Autowired
+	ThisIsBean thisIsBean;
+
+	public void getThisIsBean(String code,String name) {
+		if(thisIsBean==null){
+			thisIsBean.setCode("AAA");
+			
+		}
+	}
+
+}
+

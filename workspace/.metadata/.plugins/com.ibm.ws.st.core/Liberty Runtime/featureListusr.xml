@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<featureInfo name="usr" location="C:\Users\user\MobileFirst-8.0.0.0\mfp-server\usr"> 
+    <feature name="MFPDecoderFeature-1.0"> 
+        <symbolicName>MFPDecoderFeature-1.0</symbolicName> 
+        <apiPackage type="ibm-api">com.ibm.websphere.crypto</apiPackage> 
+    </feature> 
+<defaultConfiguration> 
+</defaultConfiguration> 
+</featureInfo>
