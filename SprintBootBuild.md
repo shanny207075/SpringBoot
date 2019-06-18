@@ -78,8 +78,6 @@
 
 ### 5.建立bootstrap.yml與 application.yml
 
-### 5.建立bootstrap.yml與 application.yml
-
 new->other->general->File
 ```Groovy 
     server:
