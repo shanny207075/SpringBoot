@@ -1,0 +1,51 @@
+package com.example.linebot.controller;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.linebot.model.Event;
+import com.example.linebot.model.EventWrapper;
+
+@RestController
+@RequestMapping("/shanny")
+public class LineBotController {
+	
+	  @RequestMapping(value="/callback")
+	    public void callback(@RequestBody EventWrapper events) {  
+	        for(Event event:events.getEvents()){
+	            switch(event.getType()){
+	               case "message": //當event為message時進入此case執行，其他event(如follow、unfollow、leave等)的case在此省略，您可自己增加           
+	                   System.out.print("This is a message event!");
+	                   switch(event.getMessage().getType()){
+	                   case "text": //當message type為text時，進入此case執行，目前子是將使用者傳來的文字訊息在其前加上echo字串後，回傳給使用者
+	                       sendResponseMessages(event.getReplyToken(), event.getMessage().getText());
+	                       System.out.println("This is a text message. It's replytoken is "+event.getReplyToken());
+	                       break;
+	                   case "image"://當message type為image時，進入此case執行，
+	                       System.out.println("This is a image message. It's replytoken is "+event.getReplyToken());
+	                       break;
+	                   case "audio"://當message type為audio時，進入此case執行，
+	                       System.out.println("This is a audio message. It's replytoken is "+event.getReplyToken());
+	                       break;
+	                   case "video"://當message type為video時，進入此case執行，
+	                       System.out.println("This is a video message. It's replytoken is "+event.getReplyToken());
+	                       break;
+	                   case "file"://當message type為file時，進入此case執行，
+	                       System.out.println("This is a file message. It's replytoken is "+event.getReplyToken());
+	                       break;
+	                   case "sticker"://當message type為sticker時，進入此case執行，
+	                       System.out.println("This is a sticker message. It's replytoken is "+event.getReplyToken());
+	                       break;
+	                   case "location"://當message type為location時，進入此case執行，
+	                       System.out.println("This is a location message. It's replytoken is "+event.getReplyToken());
+	                       break;
+	                   }
+	                   
+	                   break;
+	               }
+	        }
+	    }
+
+}
