@@ -8,78 +8,100 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 
 import javax.net.ssl.HttpsURLConnection;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.springframework.util.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.linebot.model.Event;
-import com.example.linebot.model.EventWrapper;
+import com.example.linebot.text.model.Event;
+import com.example.linebot.text.model.EventWrapper;
 
 @RestController
 @RequestMapping("/linebot")
 public class LineBotController {
 
-	private String accessToken = "4QDv4/STexJ3rpSo7103fU4BmrpkRMEWLbZLinBrKr/96+gI5AJzW6GF8L/kk/HUxP4U1C2sotycuUhnuOesXmgj/M/UqSqeTe1Bvdlv73/FKkb34i4aYLE0bN9n1ZMLvdDDLcTv7rSc74z+s9CA6QdB04t89/1O/w1cDnyilFU=";
-
 	private final Logger log = Logger.getLogger("tesglog");
+	// line access token
+	private String  accessToken = System.getenv("ACCESS_TOKEN");
+	// google map api key
+	private String  apiKey = System.getenv("API_KEY");
 
-	// 打招呼
-	private List<String> GREETINGS = Arrays.asList("hi", "hello", "你好", "哈囉", "安安", "嗨", "您好");
-	// 回復打招呼
-	private List<String> GREETINGS_RESPONSE = Arrays.asList("你好呀(^o^)/", "哈囉～ヾ(・ω・ｏ)", "安安呀( ･ω･)ﾉ", "嗨～\\( ﾟ▽ﾟ)/");
-	// 中午吃甚麼
-	private List<String> EATING = Arrays.asList("晚餐", "晚上", "中餐", "中午", "吃");
+	@Autowired
+	TextController textCtrl;
+
+	@Autowired
+	StickerController stickerCtrl;
+	
+	@Autowired
+	LocationController locationCtrl;
 
 	@RequestMapping(value = "/test")
 	public String justTest() {
-		log.info("@@@ justTest  @@@");
 		return "@@@ justTest  @@@";
 	}
 
 	@RequestMapping(value = "/callback")
 	public void callback(@RequestBody EventWrapper events) {
+		
 		log.setLevel(Level.ALL);
 		for (Event event : events.getEvents()) {
 			switch (event.getType()) {
-			case "message": // 當event為message時進入此case執行，其他event(如follow、unfollow、leave等)的case在此省略，您可自己增加
+			case "message":
+				// 當event為message時進入此case執行，其他event(如follow、unfollow、leave等)的case在此省略，您可自己增加
 				log.info("@@@ This is a message event!  @@@");
+				
+				String replyToken = event.getReplyToken();
+				String rspMessage = "";
+				
 				switch (event.getMessage().getType()) {
 
-				case "text": // 當message type為text時，進入此case執行，目前子是將使用者傳來的文字訊息在其前加上echo字串後，回傳給使用者
-					sendResponseMessages(event.getReplyToken(), event.getMessage().getText());
+				case "text": 
+					String requestMsg = event.getMessage().getText();
+					log.info("@@@ text message  @@@" + requestMsg);
+					
+					rspMessage = textCtrl.buildMessage(replyToken, requestMsg);
+					log.info("## response body json message ##" + rspMessage);
+										
 					break;
-				case "image":// 當message type為image時，進入此case執行，
+				case "image":
 					break;
-				case "audio":// 當message type為audio時，進入此case執行，
+				case "audio":
 					break;
-				case "video":// 當message type為video時，進入此case執行，
+				case "video":
 					break;
-				case "file":// 當message type為file時，進入此case執行，
+				case "file":
 					break;
-				case "sticker":// 當message type為sticker時，進入此case執行，
+				case "sticker":
+					String stickerId = event.getMessage().getStickerId();
+					log.info("@@@ sticker message  @@@" + stickerId);
+					
+					rspMessage = stickerCtrl.buildSticker(replyToken);
+					log.info("## response body json message ##" + rspMessage);
+					
 					break;
-				case "location":// 當message type為location時，進入此case執行，
+				case "location":
+					log.info("@@@ Longitude @@@" + event.getMessage().getLongitude());
+					log.info("@@@ Latitude @@@" + event.getMessage().getLatitude());
+					rspMessage = locationCtrl.buildPlace(replyToken, apiKey, event.getMessage().getLatitude(), event.getMessage().getLongitude());
 					break;
 				}
-
+				
+				sendResponseMessages(rspMessage);
+				
 				break;
 			}
 		}
 	}
 
-	private void sendResponseMessages(String replyToken, String message) {
-		// 回傳的response body json 格式訊息
-		String rspMessage = buildMessage(replyToken, message);
-		log.info("## message ##" + rspMessage);
+	/**
+	 * 回傳訊息
+	 */
+	private void sendResponseMessages(String rspMessage) {
 
 		// 建立連線
 		HttpsURLConnection con = createConnection();
@@ -162,49 +184,6 @@ public class LineBotController {
 	}
 
 	/**
-	 * 組回傳的response body json 格式訊息
-	 */
-	private String buildMessage(String replyToken, String requestMsg) {
-		String responseMsg = "";
-		responseMsg = replyGreeting(requestMsg,responseMsg);
-		responseMsg = replyEating(requestMsg,responseMsg);
-
-		if (StringUtils.isEmpty(responseMsg)) {
-			responseMsg = "不好意思，我不太了解「" + requestMsg + "」的意思...(´-ω-`)";
-		}
-
-		return "{\"replyToken\":\"" + replyToken + "\",\"messages\":[{\"type\":\"text\",\"text\":\"" + responseMsg + "\"}]}";
-	}
-
-	/**
-	 * 回復「打招呼」
-	 */
-	private String replyGreeting(String requestMsg,String responseMsg) {
-		int random = new Random().nextInt(GREETINGS_RESPONSE.size());
-		for (String s : GREETINGS) {
-			if (requestMsg.toLowerCase().indexOf(s) > -1) {
-				responseMsg = GREETINGS_RESPONSE.get(random);
-				break;
-			}
-		}
-		return responseMsg;
-	}
-	
-	/**
-	 * 回復「吃什麼」
-	 */
-	private String replyEating(String requestMsg,String responseMsg) {
-//		int random = new Random().nextInt(GREETINGS_RESPONSE.size());
-		for (String s : EATING) {
-			if (requestMsg.toLowerCase().indexOf(s) > -1) {
-				responseMsg = "吃好料";
-				break;
-			}
-		}
-		return responseMsg;
-	}
-
-	/**
 	 * 顯示回傳的錯誤訊息
 	 * 
 	 * @throws Exception
@@ -225,7 +204,7 @@ public class LineBotController {
 		try (BufferedReader in = new BufferedReader(new InputStreamReader(inputStream))) {
 			String line;
 			while ((line = in.readLine()) != null) {
-				builder.append(line); // + "\r\n"(no need, json has no line breaks!)
+				builder.append(line);
 			}
 			in.close();
 		}

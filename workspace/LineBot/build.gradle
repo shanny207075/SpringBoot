@@ -29,10 +29,17 @@ repositories {
 // 取得spring-cloud-starter-config (取得clinet端的依賴)
 dependencies {
  compile('org.springframework.boot:spring-boot-starter-web')
+ compile('org.jsoup:jsoup:1.12.1')
+ compile("org.json:json:20140107")
 
  //test
  testCompile('org.springframework.boot:spring-boot-starter-test')
  
+}
+
+// 排除預設的jar，防止讀不到新加入的jar檔
+configurations.all {
+      exclude group: 'com.vaadin.external.google', module: 'android-json'
 }
 
 dependencyManagement {
