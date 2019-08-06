@@ -1,43 +1,43 @@
 
-Šsquid:S11922"SDefine a constant instead of duplicating this literal "155å…¬è»Šè·¯ç·šåœ–" 5 times.(‹°Ëÿ8‚Á««¾-HáRCRITICALZ
+„squid:S00116."ORename this field "HELP" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì”Ì–8ôÔ€¼-HÁRMINORZ
 CODE_SMELL
-Zsquid:S11706"!Make this final field static too.(ìåÆÁüÿÿÿÿ8­ç…­¾-HâRMINORZ
+Zsquid:S11706"!Make this final field static too.(ìåÆÁüÿÿÿÿ8­ç…­¾-HÂRMINORZ
 CODE_SMELL
-Usquid:S11702"!Make this final field static too.(‹°Ëÿ8ìÓ×«¾-HãRMINORZ
+Œsquid:S001168"RRename this field "MESSAGE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€Ø¹Îşÿÿÿÿ8¦å¦«¾-HÃRMINORZ
 CODE_SMELL
-Zsquid:S11708"!Make this final field static too.(€Ø¹Îşÿÿÿÿ8şğ¨«¾-HäRMINORZ
-CODE_SMELL
-„squid:S00116("ORename this field "NEWS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€èÆ8Ú»¦¹-HåRMINORZ
-CODE_SMELL
-Zsquid:S1068"'Remove this unused "log" private field.(È†ôa8­¿ÿ§¾-HæRMAJORZ
-CODE_SMELL
-Šsquid:S00116&"PRename this field "MOVIE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÆÌ™ıÿÿÿÿ8Š‰Âï¸-HçRMINORZ
-CODE_SMELL
-`squid:S1148¾"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8æ¬‘£¾-HèRMINORZVULNERABILITY
-csquid:S10686"*Remove this unused "RETURN" private field.(ìåÆÁüÿÿÿÿ8­ç…­¾-HéRMAJORZ
+„squid:S00116("ORename this field "NEWS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€èÆ8Ú»¦¹-HÄRMINORZ
 CODE_SMELL
 
-squid:S135Í"YReduce the total number of break and continue statements in this loop to use at most one.(…¿şØ8æ¬‘£¾-HêRMINORZ
+squid:S135Í"YReduce the total number of break and continue statements in this loop to use at most one.(…¿şØ8æ¬‘£¾-HÅRMINORZ
 CODE_SMELL
-vsquid:UnusedPrivateMethodp"/Remove this unused private "replyGoing" method.(¼½„şÿÿÿÿ8úĞü¬¾-HëRMAJORZ
+‰squid:S00116""TRename this field "GREETINGS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö¢‹ä8Š‰Âï¸-HÆRMINORZ
 CODE_SMELL
-‚squid:UselessImportCheck"<Remove this unused import 'com.example.linebot.model.Image'.(¥üŞÙùÿÿÿÿ8ä©Â¬¾-HìRMINORZ
+‹squid:S001166"QRename this field "RETURN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìåÆÁüÿÿÿÿ8­ç…­¾-HÇRMINORZ
 CODE_SMELL
-`squid:S1148´"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8æ¬‘£¾-HíRMINORZVULNERABILITY
-’squid:S00116$"]Rename this field "GREETINGS_RESPONSE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÑ¯±8Š‰Âï¸-HîRMINORZ
+`squid:S1148¾"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8æ¬‘£¾-HÈRMINORZVULNERABILITY
+Zsquid:S1068"'Remove this unused "log" private field.(È†ôa8­¿ÿ§¾-HÉRMAJORZ
 CODE_SMELL
-‡squid:S001162"RRename this field "BUS_155" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹°Ëÿ8ìÓ×«¾-HïRMINORZ
+‡squid:S001162"RRename this field "BUS_155" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹°Ëÿ8ìÓ×«¾-HÊRMINORZ
 CODE_SMELL
-Zsquid:S11704"!Make this final field static too.(Äö†¡øÿÿÿÿ8İ‡ù¬¾-HğRMINORZ
+‚squid:UselessImportCheck"<Remove this unused import 'com.example.linebot.model.Image'.(¥üŞÙùÿÿÿÿ8ä©Â¬¾-HËRMINORZ
 CODE_SMELL
-Œsquid:S001168"RRename this field "MESSAGE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€Ø¹Îşÿÿÿÿ8¦å¦«¾-HñRMINORZ
+Zsquid:S11708"!Make this final field static too.(€Ø¹Îşÿÿÿÿ8şğ¨«¾-HÌRMINORZ
 CODE_SMELL
-„squid:S00116."ORename this field "HELP" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì”Ì–8ôÔ€¼-HòRMINORZ
+csquid:S10686"*Remove this unused "RETURN" private field.(ìåÆÁüÿÿÿÿ8­ç…­¾-HÍRMAJORZ
 CODE_SMELL
-Šsquid:S001164"PRename this field "GOING" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äö†¡øÿÿÿÿ8İ‡ù¬¾-HóRMINORZ
+Usquid:S11702"!Make this final field static too.(‹°Ëÿ8ìÓ×«¾-HÎRMINORZ
 CODE_SMELL
-`squid:S1148ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8æ¬‘£¾-HôRMINORZVULNERABILITY
-‹squid:S001166"QRename this field "RETURN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìåÆÁüÿÿÿÿ8­ç…­¾-HõRMINORZ
+Zsquid:S11704"!Make this final field static too.(Äö†¡øÿÿÿÿ8İ‡ù¬¾-HÏRMINORZ
 CODE_SMELL
-‰squid:S00116""TRename this field "GREETINGS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö¢‹ä8Š‰Âï¸-HöRMINORZ
+Šsquid:S11922"SDefine a constant instead of duplicating this literal "155å…¬è»Šè·¯ç·šåœ–" 5 times.(‹°Ëÿ8‚Á««¾-HĞRCRITICALZ
+CODE_SMELL
+`squid:S1148´"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8æ¬‘£¾-HÑRMINORZVULNERABILITY
+`squid:S1148ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8æ¬‘£¾-HÒRMINORZVULNERABILITY
+’squid:S00116$"]Rename this field "GREETINGS_RESPONSE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÑ¯±8Š‰Âï¸-HÓRMINORZ
+CODE_SMELL
+vsquid:UnusedPrivateMethodp"/Remove this unused private "replyGoing" method.(¼½„şÿÿÿÿ8úĞü¬¾-HÔRMAJORZ
+CODE_SMELL
+Šsquid:S001164"PRename this field "GOING" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äö†¡øÿÿÿÿ8İ‡ù¬¾-HÕRMINORZ
+CODE_SMELL
+Šsquid:S00116&"PRename this field "MOVIE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÆÌ™ıÿÿÿÿ8Š‰Âï¸-HÖRMINORZ
 CODE_SMELL

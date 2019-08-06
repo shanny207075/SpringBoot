@@ -1,12 +1,12 @@
 
-squid:S2147¾"ECombine this catch with the one at line 187, which has the same body.(©œ¡ÿÿÿÿÿ8¦¡Íã»-H÷RMINORZ
+squid:S2147¾"ECombine this catch with the one at line 187, which has the same body.(©œ¡ÿÿÿÿÿ8¦¡Íã»-H±RMINORZ
 CODE_SMELL
-dsquid:S00108ã")Either remove or fill this block of code.(ñ“Š±üÿÿÿÿ8¦¡Íã»-HøRMAJORZ
+`squid:S1148¿"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦¡Íã»-H²RMINORZVULNERABILITY
+dsquid:S00108ã")Either remove or fill this block of code.(ñ“Š±üÿÿÿÿ8¦¡Íã»-H³RMAJORZ
 CODE_SMELL
-`squid:S1148¿"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦¡Íã»-HùRMINORZVULNERABILITY
-`squid:S1148¼"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦¡Íã»-HúRMINORZVULNERABILITY
-`squid:S1148÷"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦¡Íã»-HûRMINORZVULNERABILITY
-xsquid:S1155­">Use isEmpty() to check whether the collection is empty or not.(—åŸûÿÿÿÿ8¦¡Íã»-HüRMINORZ
+`squid:S1148÷"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦¡Íã»-H´RMINORZVULNERABILITY
+osquid:S1141à"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¦¡Íã»-HµRMAJORZ
 CODE_SMELL
-osquid:S1141à"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¦¡Íã»-HıRMAJORZ
+`squid:S1148¼"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦¡Íã»-H¶RMINORZVULNERABILITY
+xsquid:S1155­">Use isEmpty() to check whether the collection is empty or not.(—åŸûÿÿÿÿ8¦¡Íã»-H·RMINORZ
 CODE_SMELL
